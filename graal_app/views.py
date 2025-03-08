@@ -1,7 +1,7 @@
-from rest_framework import generics
-from rest_framework.views import APIView
+from rest_framework import generics, permissions
 from .models import Category, Transaction
 from .serializers import CategorySerializer, TransactionSerializer
+
 
 
 class CategoryListCreateAPIView(generics.ListCreateAPIView):
@@ -12,6 +12,7 @@ class CategoryListCreateAPIView(generics.ListCreateAPIView):
 class CategoryRetrieveUpdateDeleteAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
+
 
 
 class TransactionListCreateAPIView(generics.ListCreateAPIView):

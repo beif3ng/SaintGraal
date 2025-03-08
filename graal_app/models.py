@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='categories')
+
 
     def __str__(self):
         return f"{self.name}"
@@ -19,7 +21,7 @@ class Transaction(models.Model):
         (EXPENSE, 'Expense'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True) # Erase [null=True] if JWT Auth
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=10, choices=TYPE_CHOICES, default=EXPENSE)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL,
