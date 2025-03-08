@@ -19,7 +19,7 @@ class Transaction(models.Model):
         (EXPENSE, 'Expense'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True) # Erase [null=True] if JWT Auth
     type = models.CharField(max_length=10, choices=TYPE_CHOICES, default=EXPENSE)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL,
