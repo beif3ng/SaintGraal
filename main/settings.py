@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'djoser',
     'drf_yasg',
     'graal_app',
+    'reportlab'
 ]
 
 MIDDLEWARE = [
