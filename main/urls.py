@@ -27,7 +27,6 @@ schema_view = get_schema_view(
         default_version='v1',
         description="API for budgeting",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="REMOVED"),
         license=openapi.License(name="MIT License"),
     ),
     public=True,
