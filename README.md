@@ -54,7 +54,7 @@ SaintGraal/
 ## Getting Started
 
 ```bash
-git clone https://github.com/Nezdeshniy/SaintGraal.git
+git clone https://github.com/beif3ng/SaintGraal.git
 cd SaintGraal
 cp .env.example .env  # fill in your values
 pip install -r requirements.txt
